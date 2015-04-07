@@ -8,6 +8,9 @@
 	const APPID = "1431368163839906";
 	const APPSECRET = "721d4968d5955f3f3cc9717e587f3184";
 	
+	use Facebook\FacebookSession;
+	use Facebook\FacebookRedirectLoginHelper;
+	
 	FacebookSession::setDefaultApplication( APPID, APPSECRET);
 	
 	$helper = new FacebookRedirectLoginHelper('https://aleas.herokuapp.com/');
