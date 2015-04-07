@@ -3,12 +3,15 @@
 	ini_set("display_errors",1);
 	session_start();
 	
-	require "facebook-php-sdk-v4-4.0-dev/autoload.php"
+	require "facebook-php-sdk-v4-4.0-dev/autoload.php";
 	
-	const APPID = "1431368163839906"
-	const APPSECRET = "721d4968d5955f3f3cc9717e587f3184"
+	const APPID = "1431368163839906";
+	const APPSECRET = "721d4968d5955f3f3cc9717e587f3184";
 	
 	FacebookSession::setDefaultApplication( APPID, APPSECRET);
+	
+	$helper = new FacebookRedirectLoginHelper('https://aleas.herokuapp.com/');
+	$loginUrl = $helper->getLoginUrl();
 ?>
 
 <!DOCTYPE html>
