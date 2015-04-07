@@ -78,8 +78,9 @@
 				$request_user_execited = $request_user->execute();
 				$user = $request_user_execited->getGraphObject(GraphUser::ClassName());
 				
-				echo "bonjour" .$user->getName();
-				var_dump($_SESSION['user']);
+				echo "Bonjour 你好 : " .$user->getName();
+				
+				var_dump($_SESSION['fb_token']);
 			}else
 			{
 				$loginUrl = $helper->getLoginUrl();
