@@ -72,7 +72,11 @@
 			{
 				$_SESSION['fb_token'] = (string) $session->getAccessToken();
 				
-				var_dump($_SESSION['fb_token']);
+				$request_user = new FacebookRequest($session,"Get","/me");
+				$request_user_execited = $request_user->execute();
+				$user = $request_user_execited->getGraphObject(GraphUser::ClassName());
+				
+				var_dump($_SESSION['user']);
 			}else
 			{
 				$loginUrl = $helper->getLoginUrl();
