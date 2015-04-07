@@ -14,8 +14,20 @@
 	FacebookSession::setDefaultApplication( APPID, APPSECRET);
 	
 	$helper = new FacebookRedirectLoginHelper('https://aleas.herokuapp.com/');
-	$loginUrl = $helper->getLoginUrl();
-	echo $loginUrl;
+		
+	//SI les variables de ssion existent et que  $_SESSION['fb_token'] existe
+	//alors je veux créer mon utilisateur à partir de cette session
+	if( isset($_SESSION) && isset($_SESSION[]))
+	{
+		$session = new FacebookSession ($_SESSION['fb_token']);
+	}
+	//sinon j'affiche le lien de connection
+	else
+	{
+		$loginUrl = $helper->getLoginUrl();
+		echo "<a href'".$loginUrl."'>Se connecter</a>";
+	}
+
 ?>
 
 <!DOCTYPE html>
@@ -52,6 +64,21 @@
 	  data-width="450"
 	  data-show-faces="true">
 	</div>
+	<br>
+	
+	<pre>
+		<?php
+			$session = helper->getSessionFromRedirect();
+			
+			if(session)
+			$_SESSION['fb_token'] = (string) $session->getAccessToken();
+			
+			var_dump($_SESSION['fb_token']);
+		?>
+	
+	</pre>
+	
+
 	
 </body>
 
