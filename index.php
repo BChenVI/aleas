@@ -76,7 +76,7 @@
 			}else
 			{
 				$loginUrl = $helper->getLoginUrl();
-				echo "<a href'".$loginUrl."'>Se connecter</a>";
+				echo "<a href='".$loginUrl."'>Se connecter</a>";
 			}
 		?>
 	
