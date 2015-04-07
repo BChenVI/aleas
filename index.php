@@ -24,8 +24,7 @@
 	//sinon j'affiche le lien de connection
 	else
 	{
-		$loginUrl = $helper->getLoginUrl();
-		echo "<a href'".$loginUrl."'>Se connecter</a>";
+		$session = helper->getSessionFromRedirect();
 	}
 
 ?>
@@ -68,12 +67,17 @@
 	
 	<pre>
 		<?php
-			$session = helper->getSessionFromRedirect();
-			
+		
 			if(session)
-			$_SESSION['fb_token'] = (string) $session->getAccessToken();
-			
-			var_dump($_SESSION['fb_token']);
+			{
+				$_SESSION['fb_token'] = (string) $session->getAccessToken();
+				
+				var_dump($_SESSION['fb_token']);
+			}else
+			{
+				$loginUrl = $helper->getLoginUrl();
+				echo "<a href'".$loginUrl."'>Se connecter</a>";
+			}
 		?>
 	
 	</pre>
