@@ -15,6 +15,7 @@
 	
 	$helper = new FacebookRedirectLoginHelper('https://aleas.herokuapp.com/');
 	$loginUrl = $helper->getLoginUrl();
+	echo $loginUrl;
 ?>
 
 <!DOCTYPE html>
