@@ -11,6 +11,7 @@
 	use Facebook\FacebookSession;
 	use Facebook\FacebookRedirectLoginHelper;
 	use Facebook\FaceRequest;
+	use Facebook\GraphUser;
 	
 	FacebookSession::setDefaultApplication( APPID, APPSECRET);
 	
@@ -18,7 +19,7 @@
 		
 	//SI les variables de ssion existent et que  $_SESSION['fb_token'] existe
 	//alors je veux créer mon utilisateur à partir de cette session
-	if( isset($_SESSION) && isset($_SESSION[]))
+	if( isset($_SESSION) && isset($_SESSION['fb_token']))
 	{
 		$session = new FacebookSession ($_SESSION['fb_token']);
 	}
@@ -73,7 +74,7 @@
 			{
 				$_SESSION['fb_token'] = (string) $session->getAccessToken();
 				
-				$request_user = new FacebookRequest($session,"Get","/me");
+				$request_user = new FacebookRequest($session,"GET","/me");
 				$request_user_execited = $request_user->execute();
 				$user = $request_user_execited->getGraphObject(GraphUser::ClassName());
 				
