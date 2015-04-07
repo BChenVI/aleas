@@ -70,7 +70,7 @@
 	<pre>
 		<?php
 		
-			if(session)
+			if($session)
 			{
 				$_SESSION['fb_token'] = (string) $session->getAccessToken();
 				
