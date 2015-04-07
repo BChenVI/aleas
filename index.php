@@ -26,7 +26,7 @@
 	//sinon j'affiche le lien de connection
 	else
 	{
-		$session = helper->getSessionFromRedirect();
+		$session = $helper->getSessionFromRedirect();
 	}
 
 ?>
@@ -78,6 +78,7 @@
 				$request_user_execited = $request_user->execute();
 				$user = $request_user_execited->getGraphObject(GraphUser::ClassName());
 				
+				echo "bonjour" .$user->getName();
 				var_dump($_SESSION['user']);
 			}else
 			{
