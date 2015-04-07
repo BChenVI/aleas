@@ -1,4 +1,4 @@
-<?
+<?php
 	const APPID = "1431368163839906"
 	const APPSECRET = "721d4968d5955f3f3cc9717e587f3184"
 ?>
