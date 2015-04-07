@@ -10,7 +10,7 @@
 	
 	use Facebook\FacebookSession;
 	use Facebook\FacebookRedirectLoginHelper;
-	use Facebook\FaceRequest;
+	use Facebook\FacebookRequest;
 	use Facebook\GraphUser;
 	
 	FacebookSession::setDefaultApplication( APPID, APPSECRET);
